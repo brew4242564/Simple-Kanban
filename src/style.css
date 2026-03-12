@@ -1,0 +1,193 @@
+:root {
+  --bg-main: #44444e;
+  --bg-list: color-mix(in oklab, var(--bg-main), black 35%);
+  --bg-card: color-mix(in oklab, var(--bg-list), white 10%);
+  --text: #fefae0;
+  --warn: red;
+}
+
+* {
+  margin: 0;
+  box-sizing: border-box;
+  color: var(--text);
+  font-weight: 400;
+  font-family:
+    system-ui,
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    Roboto,
+    Oxygen,
+    Ubuntu,
+    Cantarell,
+    "Open Sans",
+    "Helvetica Neue",
+    sans-serif;
+  font-size: medium;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.list {
+  border-radius: 8px;
+  overflow: hidden;
+  width: 250px;
+  overflow-wrap: break-word;
+  gap: 0.25rem;
+  display: flex;
+  flex-direction: column;
+  background-color: var(--bg-list);
+  flex-shrink: 0;
+}
+
+.list-header {
+  text-align: center;
+  font-weight: 500;
+  align-self: flex-start;
+  padding: 0.5rem 1rem;
+  width: 100%;
+}
+
+.card {
+  padding: 0.75rem;
+  border-radius: 0.75rem;
+  background-color: var(--bg-card);
+}
+
+.create-card {
+  align-self: flex-start;
+  padding: 0.5rem 1rem;
+  background-color: transparent;
+  border: 0;
+  border-radius: 4px;
+}
+
+.card-container {
+  overflow-y: auto;
+  max-height: calc(100vh - 200px);
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+  padding: 1rem;
+  scrollbar-gutter: stable;
+}
+
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--bg-main);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--bg-card);
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--bg-list);
+}
+
+.delete-mode .list-header:hover,
+.delete-mode .card:hover {
+  background-color: var(--warn);
+}
+
+.container {
+  display: flex;
+  padding: 1rem;
+  gap: 2rem;
+  align-items: flex-start;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: cadetblue;
+  padding: 1rem;
+}
+
+main {
+  background-color: var(--bg-main);
+  flex: 1;
+  overflow-x: auto;
+  overflow-y: hidden;
+}
+
+.logo span {
+  font-weight: 600;
+  font-size: large;
+}
+
+.nav-buttons {
+  display: flex;
+  gap: 1rem;
+}
+
+.nav-buttons .btn, form .btn {
+  background-color: var(--bg-main);
+  border: 0px;
+  padding: 0.5rem 0.75rem;
+  border-radius: 8px;
+  font-weight: 500;
+  color: var(--text);
+}
+
+label {
+  color: var(--text);
+  font-weight: 600;
+}
+
+input,
+textarea {
+  color: var(--text);
+  background-color: var(--bg-card);
+  border: 0;
+  padding: .5rem;
+  border-radius: 8px;
+}
+
+
+.modal-layout{
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center; 
+  align-items: center;     
+  background-color: rgba(0, 0, 0, 0.4);
+  backdrop-filter: blur(2px);
+}
+
+.modal-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 600px;
+  height: 450px;
+  background-color: var(--bg-list);
+  padding: 2rem;
+  border-radius: 8px;
+  gap: 1rem;
+}
+
+form{
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  gap: 1rem;
+}
+
+
+.hidden{
+  display: none;
+}
+
+#delete-btn.delete-mode{
+  background-color: var(--warn);
+}
