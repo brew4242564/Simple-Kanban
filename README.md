@@ -14,6 +14,6 @@ Simple kanban is a trello copy made for educational purposes using Javascript, H
 
 ## Screenshot and Live Demo
 
-![App Screenshot](https://ibb.co/27jgjHNW)
+![App Screenshot](https://i.ibb.co/VWv2v5mJ/image.png)
 
 **[Live Demo Here!](https://simple-kanban-five.vercel.app/)**
